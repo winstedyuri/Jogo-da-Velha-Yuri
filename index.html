@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jogo da véia</title>
+    <link href="/estilos/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>O famoso jogo da velha!!!</h1>
+    <script type="text/javascript">
+
+        letra = "X";
+
+        function joga(celula) {
+            celulaclicada = document.getElementById(celula).innerHTML;
+            if (celulaclicada == "X" || celulaclicada == "O") {
+                alert("Aqui não pode...");
+            } else {
+                document.getElementById(celula).innerHTML = letra;
+                if (letra == "X") {
+                    letra = "O";
+                } else {
+                    letra = "X";
+                }
+            }
+        }
+
+        function verif() {
+            c11 = document.getElementById('cel11').innerHTML;
+            c12 = document.getElementById('cel12').innerHTML;
+            c13 = document.getElementById('cel13').innerHTML;
+            c21 = document.getElementById('cel21').innerHTML;
+            c22 = document.getElementById('cel22').innerHTML;
+            c23 = document.getElementById('cel23').innerHTML;
+            c31 = document.getElementById('cel31').innerHTML;
+            c32 = document.getElementById('cel32').innerHTML;
+            c33 = document.getElementById('cel33').innerHTML;
+
+            if (((c11 != '') && (c12 != '') && (c13 != '') && (c11 == c12) && (c12 == c13)) || ((c11 != '') && (c22 != '') && (c33 != '') && (c11 == c22) && (c22 == c33)) || ((c11 != '') && (c21 != '') && (c31 != '') && (c11 == c21) && (c21 == c31)) || ((c21 != '') && (c22 != '') && (c23 != '') && (c21 == c22) && (c22 == c23)) || ((c31 != '') && (c32 != '') && (c33 != '') && (c31 == c32) && (c32 == c33)) || ((c12 != '') && (c22 != '') && (c32 != '') && (c12 == c22) && (c22 == c32)) || ((c13 != '') && (c23 != '') && (c33 != '') && (c13 == c23) && (c23 == c33)) || ((c31 != '') && (c22 != '') && (c13 != '') && (c31 == c22) && (c22 == c13))) {
+                alert('Você foi o ganhador dessa rodada!');
+                novo();
+            }
+        }
+
+        function novo() {
+            for (i = 1; i < 4; i++) {
+                for (j = 1; j < 4; j++) {
+                    nomecelula = 'cel' + i + j
+                    document.getElementById(nomecelula).innerHTML = '';
+
+                }
+            }
+        }
+
+    </script>
+        <table class="color">
+        <tr>
+            <td valign="middle" id="cel11" class="jogo" onclick="joga(this.id);verif();"></td>
+            <td valign="middle" id="cel12" class="jogo" onclick="joga(this.id);verif();"></td>
+            <td valign="middle" id="cel13" class="jogo" onclick="joga(this.id);verif();"></td>
+        </tr>
+
+        <tr>
+            <td valign="middle" id="cel21" class="jogo" onclick="joga(this.id);verif();"></td>
+            <td valign="middle" id="cel22" class="jogo" onclick="joga(this.id);verif();"></td>
+            <td valign="middle" id="cel23" class="jogo" onclick="joga(this.id);verif();"></td>
+        </tr>
+
+        <tr>
+            <td valign="middle" id="cel31" class="jogo" onclick="joga(this.id);verif();"></td>
+            <td valign="middle" id="cel32" class="jogo" onclick="joga(this.id);verif();"></td>
+            <td valign="middle" id="cel33" class="jogo" onclick="joga(this.id);verif();"></td>
+        </tr>
+    </table>
+    <button type="button" class="btn" onclick="novo();">Começar um novo jogo</button>
+</body>
+
+</html>

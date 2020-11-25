@@ -1,0 +1,39 @@
+body
+{
+    background-image: url(../img/1.jpg);
+    text-align: center;
+}
+
+h1 {
+    font-size: 40pt;
+    color: #00e1ff;
+    text-transform: uppercase;
+    text-shadow: 10px 5px 5px #586769;
+}
+
+.jogo
+{
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    background: #2e2727;
+    font-size: 80px;
+    color: #ff6600;
+    cursor: pointer;
+    border-radius: 20px;
+}
+    
+.btn
+{
+    background-color: #00e1ff;
+    margin: 10px;
+    border-radius: 10px;
+    border-color:  #000000;
+    font-size: 20px;
+}
+
+.color {
+    border: 10px solid #00e1ff;
+    border-radius: 20px;
+    margin: auto;
+}
